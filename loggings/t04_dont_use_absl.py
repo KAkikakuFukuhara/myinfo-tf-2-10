@@ -1,4 +1,6 @@
-""" abslを使わない場合
+"""
+abslを使わない方法ならフォーマットをいじれる
+ただし、absl.app.run を使用すると設定が意味なくなる
 """
 import logging
 
@@ -18,10 +20,10 @@ logging.basicConfig(level=logging.DEBUG)
 print(vars(root_logger))
 
 def main(*args, **kwargs):
-    logging.info("aaaa")
+    logging.info("info")
 
-    logging.debug("aaaa")
+    logging.debug("debug")
 
 if __name__ == "__main__":
     main()
-    # app.run(main) # app.run を使うと削除した行為がなかったことにされる
+    app.run(main) # app.run を使うと削除した行為がなかったことにされる
